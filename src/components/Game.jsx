@@ -15,12 +15,29 @@ const Game = () => {
   const cardOne = data.find(card => card.idx === one);
   const cardTwo = data.find(card => card.idx === two);
 
+  // calculate score
+  const score = cardOne.points + cardTwo.points;
+
+  // determine message
+  let message;
+  if (score === 21) {
+    message = <p>🎉🎉🎉 Blackjack!!! 🎉🎉🎉</p>;
+  } else {
+    message = <p>😞😞😞 You lost 😞😞😞<br></br>
+    <small>Sorry, this is a stupid version of Blackjack. Refresh to try again.</small>
+    </p>;
+  }
+
   return (    
     <div className="Game">
-      <Card id={cardOne.id} value={cardOne.value} suit={cardOne.suit}/>
-      <Card id={cardTwo.id} value={cardTwo.value} suit={cardTwo.suit}/>
+      <div className="Game-cards">
+        <Card id={cardOne.id} value={cardOne.value} suit={cardOne.suit}/>
+        <Card id={cardTwo.id} value={cardTwo.value} suit={cardTwo.suit}/>
+      </div>
+      <p className="Game-score">Score: {score}</p>
+      <p className="Game-message">{message}</p>
     </div>
   )
 }
 
-export default Game
+export default Game;
