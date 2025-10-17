@@ -1,9 +1,14 @@
+import Game from './Game.jsx'
 import '../styles/App.css'
 
-const App = (props) => {
+const App = () => {
   return (
     <div className="App">
-      <h1 className="App-title">Blackjack</h1>
+      <main>
+        <h1 className="App-title">Blackjack</h1>
+        <Game />
+        
+      </main>      
     </div>
   )
 }
