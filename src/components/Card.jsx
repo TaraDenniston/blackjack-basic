@@ -6,7 +6,7 @@ const Card = ({id, value, suit}) => {
 
   return (    
     <div className="Card">
-      <img src={cardImg} alt={cardAlt}/>
+      <img className="Card-img" src={cardImg} alt={cardAlt}/>
     </div>
   )
 }
